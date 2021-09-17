@@ -1,0 +1,25 @@
+body {
+    background-color: skyblue;
+}
+
+.start {
+    color: blue;
+}
+
+div {
+    text-align: center;
+}
+
+.button {
+    margin: 0px ;
+    width: 20%;
+}
+
+.animal {
+    margin: 0px;
+    width: 30%;
+}
+
+p {
+    font-size: large;
+}
