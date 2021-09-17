@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+  <div>
+        <h2>ほんやくしたいことばを えいごで 入力してね</h2>
+        <img src="images/sun.png" alt="太陽" class="sun" width="150" height="150">
+  </div>
+ <textarea id="text"></textarea>
+ <button id="btn">翻訳</button>
+ <img src="images/search.png" alt="検索" class="search" width="50" height="50">
+ <div id="txt"></div>
+ <script>
+  const text = document.querySelector('#text');
+ 
+  btn.addEventListener('click', function() {
+    const url = 'https://script.google.com/macros/s/AKfycbxoAY6qohFOi88aToaJ4fUHAIiDmr3hNWjcFvOlEyNKUQnDPGs/exec?text='+text.value+'&source=en&target=ja';
+    const request = new XMLHttpRequest();
+    request.open("GET", url);
+    
+    request.addEventListener("load", (e) => {//翻訳ボタンが押された時の挙動
+      var word = e.currentTarget.response;;
+      txt.innerHTML= e.currentTarget.response;//翻訳結果出力
+      window.open( 'https://www.irasutoya.com/search?q='+word , null, 'top=100,left=100,width=700,height=400');//いらすとやで検索したのを表示
+    });
+    request.send();
+})
+ 
+ </script>
+
+<img src="images/book.png" alt="本" class="book" width="150" height="150">
+<img src="images/tree.png" alt="木" class="tree" width="150" height="150">
+<img src="images/book.png" alt="本" class="book" width="150" height="150"><br>
+
+<a href="index.html">タイトルへ</a>
+</body>
+
+</html>
