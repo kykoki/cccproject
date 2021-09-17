@@ -1,0 +1,38 @@
+<!-- translation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style_2.css">
+    <title>Document</title>
+</head>
+<body>
+  <div>
+    <img src="images/book.png" alt="本" class="under">
+    <img src="images/book.png" alt="本" class="under">
+    <img src="images/tree.png" alt="木" class="under">
+    <img src="images/search.png" alt="虫眼鏡" class="middle">
+    <img src="images/sun.png" alt="太陽" class="top">
+  </div>
+ <textarea id="text"></textarea>
+ <button id="btn">翻訳</button>
+ <div id="txt"></div>
+ <script>
+  const text = document.querySelector('#text');
+ 
+  btn.addEventListener('click', function() {
+    const url = 'https://script.google.com/macros/s/AKfycbxoAY6qohFOi88aToaJ4fUHAIiDmr3hNWjcFvOlEyNKUQnDPGs/exec?text='+text.value+'&source=en&target=ja';
+    const request = new XMLHttpRequest();
+    request.open("GET", url);
+    
+    request.addEventListener("load", (e) => {//翻訳ボタンが押された時の挙動
+      var word = e.currentTarget.response;;
+      txt.innerHTML= e.currentTarget.response;//翻訳結果出力
+      window.open( 'https://www.irasutoya.com/search?q='+word , null, 'top=100,left=100,width=700,height=400');//いらすとやで検索したのを表示
+    });
+    request.send();
+})
+ 
+ </script>
+</body>
+</html>
