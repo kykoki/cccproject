@@ -1,37 +1,35 @@
 <!-- translation.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style_2.css">
   <title>Document</title>
 </head>
 <body>
-  <div>
-    <button id="home"><img src="images/home.png" alt="家" class="home"></button>
+  <div class="home">
+    <button id="home"><img src="images/home.png" alt="家" width="75" height="75"></button>
   </div>
 
   <h1>タイトル</h1>
-
-  <div>
-    <img src="images/book.png" alt="本" class="under">
-    <img src="images/book.png" alt="本" class="under">
-    <img src="images/tree.png" alt="木" class="under">
-    <img src="images/sun.png" alt="太陽" class="top">
+  
+  <div class="top">
+    <img src="images/sun.png" alt="太陽" class="sun">
   </div>
-
-  <div>
-    <label>
-      <textarea cols="40" rows="5" id="text" placeholder="ほんやくしたいことばをにゅうりょくしてね"></textarea>
-    </label>
+  
+  <div class="search">
+    <textarea cols="60" rows="2" id="text" placeholder="ほんやくしたいことばをにゅうりょくしてね"></textarea>
+    <button type="reset" id="btn"><img src="images/search.png" alt="虫眼鏡" width="75" height="75"></button>
   </div>
-
-  <div>
-    <button id="btn"><img src="images/search.png" alt="虫眼鏡" class="search"></button>
+  
+  
+  <div id="txt" class="result"></div>
+  
+  <div class="under">
+    <img src="images/book.png" alt="本" class="book">
+    <img src="images/tree.png" alt="木" class="tree">
+    <img src="images/book.png" alt="本" class="book">
   </div>
-
-
-  <div id="txt"></div>
 
   <script>
     const text = document.querySelector('#text');
@@ -51,8 +49,8 @@
     })
 
     home.addEventListener('click', function() {
+      window.location.href = 'index.html';
       openedWindow.close(); //開いたウィンドウを閉じる
-      window.location.href = 'file:///C:/Users/Tommy/project_CCC/website/index_3.html';
     })
   </script>
 

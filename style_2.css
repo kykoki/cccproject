@@ -1,0 +1,80 @@
+body {
+	background-color: skyblue;
+  }
+
+  h1 {
+	background-color: rgb(187, 186, 186); 
+	margin-top: 30px;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+	width: 70%;
+  }
+
+.sun {
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	width: 15%;
+	height: 15%;
+}
+
+.under {
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+.tree {
+	width: 18%;
+	height: 18%;
+	margin-top: 80px;
+	margin-bottom: 0px;
+}
+
+.book {
+	width: 25%;
+	height: 25%;
+	margin-top: 80px;
+	margin-bottom: 0px;
+}
+
+#home {
+	width: auto;
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
+.search {
+	display: flex;
+	justify-content: center;
+}
+
+textarea {
+	margin-top: 30px;
+	font-size: 30pt;
+	resize: none;
+	text-align: center;
+}
+
+#btn {
+	width: auto;
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
+.result {
+	font-size: 300px;
+}
