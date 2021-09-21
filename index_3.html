@@ -1,0 +1,60 @@
+<!-- translation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style_2.css">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <button id="home"><img src="images/home.png" alt="家" class="home"></button>
+  </div>
+
+  <h1>タイトル</h1>
+
+  <div>
+    <img src="images/book.png" alt="本" class="under">
+    <img src="images/book.png" alt="本" class="under">
+    <img src="images/tree.png" alt="木" class="under">
+    <img src="images/sun.png" alt="太陽" class="top">
+  </div>
+
+  <div>
+    <label>
+      <textarea cols="40" rows="5" id="text" placeholder="ほんやくしたいことばをにゅうりょくしてね"></textarea>
+    </label>
+  </div>
+
+  <div>
+    <button id="btn"><img src="images/search.png" alt="虫眼鏡" class="search"></button>
+  </div>
+
+
+  <div id="txt"></div>
+
+  <script>
+    const text = document.querySelector('#text');
+   
+    btn.addEventListener('click', function() {
+      const url = 'https://script.google.com/macros/s/AKfycbxoAY6qohFOi88aToaJ4fUHAIiDmr3hNWjcFvOlEyNKUQnDPGs/exec?text='+text.value+'&source=en&target=ja'; //apiのURL
+      const request = new XMLHttpRequest(); //URLのアクセス先のテキストを取得
+      request.open("GET", url);
+      
+      request.addEventListener("load", (e) => { //翻訳ボタンが押された時の挙動
+        const word = e.currentTarget.response;;
+        txt.innerHTML= e.currentTarget.response; //翻訳結果出力
+        openedWindow = window.open('https://www.irasutoya.com/search?q='+word , null, 'top=100,left=50,width=700,height=400'); //いらすとやで検索したのを表示
+      });
+
+    request.send();
+    })
+
+    home.addEventListener('click', function() {
+      openedWindow.close(); //開いたウィンドウを閉じる
+      window.location.href = 'file:///C:/Users/Tommy/project_CCC/website/index_3.html';
+    })
+  </script>
+
+</body>
+</html>
