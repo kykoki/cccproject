@@ -8,10 +8,10 @@
 </head>
 <body>
   <div class="home">
-    <button id="home"><img src="images/home.png" alt="家" width="75" height="75"></button>
+    <button id="home" type="button">はじめから</button>
   </div>
 
-  <h1>タイトル</h1>
+  <h1>もじをえにかえる　サイト</h1>
   
   <div class="top">
     <img src="images/sun.png" alt="太陽" class="sun">
@@ -42,14 +42,14 @@
       request.addEventListener("load", (e) => { //翻訳ボタンが押された時の挙動
         const word = e.currentTarget.response;;
         txt.innerHTML= e.currentTarget.response; //翻訳結果出力
-        openedWindow = window.open('https://www.irasutoya.com/search?q='+word , null, 'top=100,left=50,width=700,height=400'); //いらすとやで検索したのを表示
+        openedWindow = window.open('https://www.irasutoya.com/search?q='+word , null, 'top=400,left=500,width=1000,height=400'); //いらすとやで検索したのを表示
       });
 
     request.send();
     })
 
     home.addEventListener('click', function() {
-      window.location.href = 'index.html';
+      window.location.href = 'index_3.html';
       openedWindow.close(); //開いたウィンドウを閉じる
     })
   </script>
